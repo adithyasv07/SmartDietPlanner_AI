@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './styles/animations.css';
+@import './styles/dark-mode.css';
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 158 64% 52%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 0 0% 20%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 0 0% 35%;
+    --accent: 158 64% 52%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 158 64% 52%;
+    --radius: 1rem;
+    --gradient-start: 235 85% 70%;
+    --gradient-end: 270 70% 65%;
+    --success: 142 76% 36%;
+    --warning: 38 92% 50%;
+    --info: 217 91% 60%;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 142 76% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 142 76% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 142 76% 50%;
+    --gradient-start: 0 0% 10%;
+    --gradient-end: 0 0% 5%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-gradient-to-br from-[hsl(var(--gradient-start))] to-[hsl(var(--gradient-end))] text-foreground min-h-screen;
+  }
+  
+  .dark .card {
+    @apply border-0 shadow-none;
+  }
+  
+  /* Font improvements for better visibility */
+  body {
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  
+  .dark body {
+    font-weight: 500;
+    background: hsl(0 0% 5%) !important;
+    color: hsl(0 0% 98%);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 800;
+    color: #1a1a1a !important;
+  }
+  
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    font-weight: 700;
+    color: hsl(0 0% 100%) !important;
+  }
+  
+  p, span, div {
+    line-height: 1.6;
+  }
+  
+  .dark p, .dark span, .dark div {
+    line-height: 1.6;
+  }
+  
+  .text-muted-foreground {
+    color: #5a5a5a;
+    font-weight: 500;
+  }
+  
+  .dark .text-muted-foreground {
+    color: hsl(0 0% 75%);
+    font-weight: 500;
+  }
+  
+  /* Input field improvements */
+  input, textarea, select {
+    font-weight: 500;
+    color: #1a1a1a;
+  }
+  
+  input::placeholder, textarea::placeholder {
+    color: #6a6a6a !important;
+    font-weight: 500;
+    opacity: 1;
+  }
+  
+  .dark input, .dark textarea, .dark select {
+    font-weight: 500;
+    color: hsl(0 0% 95%);
+    background: hsl(0 0% 15%);
+  }
+  
+  .dark input::placeholder, .dark textarea::placeholder {
+    color: hsl(0 0% 60%) !important;
+    font-weight: 500;
+    opacity: 1;
+  }
+  
+  /* Ensure text in cards is visible */
+  .card p, .card span {
+    color: #2a2a2a;
+    font-weight: 500;
+  }
+  
+  .dark .card p, .dark .card span {
+    color: hsl(0 0% 90%);
+    font-weight: 500;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}

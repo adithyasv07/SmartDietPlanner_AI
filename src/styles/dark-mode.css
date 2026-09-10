@@ -1,0 +1,323 @@
+/* Dark Mode Enhancements */
+
+/* Full page dark background */
+.dark {
+  background: hsl(0 0% 5%) !important;
+  min-height: 100vh;
+}
+
+.dark #root,
+.dark .app,
+.dark main,
+.dark body {
+  background: hsl(0 0% 5%) !important;
+}
+
+/* Card styles for fully dark mode */
+.dark .card {
+  background: hsl(0 0% 10%);
+  border: 1px solid hsl(0 0% 20%);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dark .card:hover {
+  background: hsl(0 0% 12%);
+  border: 1px solid hsl(0 0% 25%);
+}
+
+/* Meal cards in dark mode */
+.dark .bg-secondary {
+  background: hsl(0 0% 15%) !important;
+  border: 1px solid hsl(0 0% 20%);
+}
+
+.dark .bg-secondary:hover {
+  background: hsl(0 0% 18%) !important;
+  border: 1px solid hsl(0 0% 25%);
+}
+
+/* Stats cards with gradient borders */
+.dark .stat-card {
+  background: hsl(0 0% 10%);
+  border: none;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.dark .stat-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.3), rgba(236, 72, 153, 0.3));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.dark .stat-card:hover::before {
+  opacity: 1;
+}
+
+/* Progress bars in dark mode */
+.dark .progress {
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+}
+
+.dark .progress-bar {
+  box-shadow: 0 0 10px rgba(76, 217, 100, 0.5);
+}
+
+/* Buttons in dark mode */
+.dark button {
+  border: none;
+}
+
+.dark button:hover {
+  border: none;
+  background: #0a0a0a;
+}
+
+.dark button.bg-primary {
+  background: #4cd964 !important;
+  border: none;
+  color: #000;
+}
+
+.dark button.bg-primary:hover {
+  background: #3ac754 !important;
+}
+
+/* Input fields in dark mode */
+.dark input,
+.dark textarea,
+.dark select {
+  background: hsl(0 0% 15%);
+  border: 1px solid hsl(0 0% 25%);
+  color: hsl(0 0% 95%);
+  font-weight: 500;
+}
+
+.dark input:focus,
+.dark textarea:focus,
+.dark select:focus {
+  border-color: hsl(142 76% 50%);
+  background: hsl(0 0% 18%);
+  box-shadow: 0 0 0 2px hsla(142, 76%, 50%, 0.2);
+}
+
+/* Badge styles in dark mode */
+.dark .badge {
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Navigation in dark mode */
+.dark header {
+  background: hsl(0 0% 8%) !important;
+  border-bottom: 1px solid hsl(0 0% 15%);
+  backdrop-filter: blur(10px);
+}
+
+/* Tab styles in dark mode */
+.dark .tabs-list {
+  background: hsl(0 0% 8%);
+  border: none;
+}
+
+.dark .tabs-trigger[data-state="active"] {
+  background: rgba(76, 217, 100, 0.15);
+  border: none;
+}
+
+/* Scrollbar in dark mode */
+.dark ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: hsl(0 0% 5%);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Glass effect for modals in dark mode */
+.dark .modal,
+.dark .dialog {
+  background: hsla(0, 0%, 10%, 0.98);
+  backdrop-filter: blur(20px);
+  border: 1px solid hsl(0 0% 20%);
+}
+
+/* Tooltip styles in dark mode */
+.dark .tooltip {
+  background: hsl(0 0% 12%);
+  border: 1px solid hsl(0 0% 20%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+/* Animated background adjustments for dark mode */
+.dark .animated-background {
+  opacity: 0.3;
+}
+
+/* Text contrast improvements for better visibility */
+.dark .text-muted-foreground {
+  color: #b5b5b5;
+  font-weight: 500;
+}
+
+.dark .text-card-foreground {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.dark h1, .dark h2, .dark h3, .dark h4 {
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+}
+
+.dark p {
+  color: #e5e5e5;
+  font-weight: 400;
+}
+
+/* Better font readability */
+.dark {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.dark .font-bold {
+  font-weight: 700;
+}
+
+.dark .font-semibold {
+  font-weight: 600;
+}
+
+.dark .font-medium {
+  font-weight: 500;
+}
+
+/* Glow effects for important elements */
+.dark .glow-primary {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.dark .glow-success {
+  box-shadow: 0 0 20px rgba(76, 217, 100, 0.3);
+}
+
+.dark .glow-warning {
+  box-shadow: 0 0 20px rgba(251, 146, 60, 0.3);
+}
+
+.dark .glow-danger {
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+}
+
+/* Additional dark mode styles for dark backgrounds */
+.dark .bg-background {
+  background: hsl(0 0% 5%) !important;
+}
+
+.dark .bg-card {
+  background: hsl(0 0% 10%) !important;
+}
+
+.dark .bg-popover {
+  background: hsl(0 0% 8%) !important;
+}
+
+.dark .bg-muted {
+  background: hsl(0 0% 20%) !important;
+}
+
+/* Panel backgrounds */
+.dark [role="tabpanel"],
+.dark .panel,
+.dark .sidebar,
+.dark .drawer-content {
+  background: hsl(0 0% 8%) !important;
+}
+
+/* Dialog and modal backgrounds */
+.dark [role="dialog"],
+.dark .dialog-content,
+.dark .modal-content {
+  background: hsl(0 0% 10%) !important;
+}
+
+/* Dropdown and select backgrounds */
+.dark .dropdown-menu,
+.dark .select-content,
+.dark [role="listbox"] {
+  background: hsl(0 0% 12%) !important;
+}
+
+/* Sheet and drawer backgrounds */
+.dark .sheet-content,
+.dark .drawer {
+  background: hsl(0 0% 10%) !important;
+}
+
+/* Ensure all text remains visible */
+.dark label {
+  color: #e5e5e5;
+  font-weight: 500;
+}
+
+.dark .text-foreground {
+  color: #f5f5f5 !important;
+}
+
+.dark .text-primary {
+  color: #4cd964 !important;
+}
+
+.dark small {
+  color: #b0b0b0;
+  font-weight: 400;
+}
+
+/* Fix text colors for better visibility */
+.dark .text-black {
+  color: #f5f5f5 !important;
+}
+
+.dark .text-gray-900 {
+  color: #e0e0e0 !important;
+}
+
+.dark .text-gray-800 {
+  color: #d0d0d0 !important;
+}
+
+.dark .text-gray-700 {
+  color: #c0c0c0 !important;
+}
+
+.dark .text-gray-600 {
+  color: #b0b0b0 !important;
+}
+
+/* Ensure proper text color inheritance */
+.dark * {
+  color: inherit;
+}
