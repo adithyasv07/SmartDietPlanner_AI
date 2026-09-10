@@ -113,10 +113,12 @@ const FoodAnalyzer = () => {
 
     setIsAnalyzing(true);
 
-    const analysisPromise = supabase.functions.invoke("analyze-food-image", {
-      body: { image: selectedImage, mode: "identify" },
-    });
-
+  const analysisPromise = supabase.functions.invoke("analyze-food-image", {
+  body: {
+    image: selectedImage,
+    step: "initial",
+  },
+});
     const minimumDelay = new Promise((resolve) => setTimeout(resolve, 1500));
 
     try {
@@ -175,12 +177,11 @@ const FoodAnalyzer = () => {
     setIsAnalyzing(true);
 
     const analysisPromise = supabase.functions.invoke("analyze-food-image", {
-      body: {
-        image: selectedImage,
-        mode: "details",
-        foodName: identifyResult.foodName,
-        answers,
-      },
+         body: {
+          step: "final",
+          foodName: identifyResult.foodName,
+          answers,
+               },
     });
 
     const minimumDelay = new Promise((resolve) => setTimeout(resolve, 2000));
