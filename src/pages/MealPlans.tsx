@@ -137,7 +137,7 @@ const MealPlans = () => {
   const mealPlans = {
     'weight-loss': {
       recommended: [
-        { name: 'Poha', calories: 180, protein: '6g', description: 'Flattened rice with vegetables and spices', vegetarian: true },
+        { name: 'RAMMMMMM', calories: 180, protein: '6g', description: 'Flattened rice with vegetables and spices', vegetarian: true },
         { name: 'Moong Dal Chilla', calories: 200, protein: '12g', description: 'Lentil pancakes with vegetables', vegetarian: true },
         { name: 'Masala Oats', calories: 150, protein: '8g', description: 'Oats cooked with vegetables and spices', vegetarian: true },
         { name: 'Dal Tadka with 1 Roti', calories: 280, protein: '14g', description: 'Lentil curry with whole wheat roti', vegetarian: true },
